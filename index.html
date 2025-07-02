@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharnbasva University Canteen Billing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="assets/header.jpeg" alt="Canteen Logo" class="logo">
+    </header>
+
+    <div class="container">
+        <h2>Billing System</h2>
+
+        <label for="name">Customer Name:</label>
+        <input type="text" id="name" placeholder="Enter Name">
+
+        <label for="type">Select Type:</label>
+        <select id="type" onchange="updateOptions()">
+            <option value="snacks">Snacks</option>
+            <option value="food">Food</option>
+        </select>
+
+        <label for="item">Select Item:</label>
+        <select id="item"></select>
+
+        <label for="quantity">Quantity:</label>
+        <select id="quantity"></select>
+
+        <button onclick="addItem()" id="add-item-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+
+        <div id="bill">
+            <h3>Bill Number: <span id="billNumber"></span></h3>
+            <h3>Customer: <span id="custName"></span></h3>
+            <ul id="itemList"></ul>
+            <p>Subtotal: ₹<span id="subtotal"></span></p>
+            <p>Tax: ₹<span id="tax"></span></p>
+            <p>Total: ₹<span id="total"></span></p>
+        </div>
+        
+        <button onclick="printBill()">Print Bill</button>
+
+        <div class="bill-history">
+            <h3>Bill History</h3>
+            <ul id="bill-history-list"></ul>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Sharnbasva University Canteen
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
